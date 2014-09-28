@@ -1,0 +1,19 @@
+.logo_picDocs{
+    background: url("../images/logo_picdocs.jpg");
+    width: 450px;
+    height: 110px;
+    margin: 0px auto;
+    background-size: 450px 110px;
+}
+
+
+.mobile .logo_picDocs{
+    background: url("../images/logo_picdocs.jpg");
+    width: 195px;
+    height: 48px;
+    margin: 0px auto;
+    background-size: 195px 48px;
+}
+
+
+

@@ -1,105 +1,470 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
+	Dopetrope by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-    <meta charset="utf-8"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
-    <meta name="msapplication-tap-highlight" content="no"/>
-    <title>Hello World</title>
-</head>
-
-
-
-<link rel="stylesheet" href="css/style.css" type="text/css"/>
-
-<script type="text/javascript" src="js/delog.js"></script>
-
-<script type="text/javascript" src="js/local.js"></script>
-<script type="text/javascript" src="js/cordova.js"></script>
-
-<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-<script type="text/javascript" src="js/utilita.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
+<html>
+	<head>
+		<title>picDocs</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
 
 
-<script>
-
-    var c_id = new Date().getTime();
-
-    if (!localStorage.getItem('customer_id')) {
-        localStorage.setItem('customer_id', c_id);
-        localStorage.setItem('password', '');
-    }
-    if (localStorage.getItem('customer_id') == 'restore') {
-        localStorage.setItem('customer_id', c_id);
-    }
-</script>
 
 
-<body class="body"
-      style="background-image:url(imm/sfondo_login.png); background-repeat: no-repeat; background-color: white">
+        <!-- HICTECH -->
 
-<label for="tiText" style="font-size:18px; color:#6b6868;position:absolute; top:25px; left:35px">Password</label>
-<br>
-<input style="font-size:20px; border-color:#ccc; position:absolute; top:48px; left:33px" type="password" id="psw"
-       value=""/>
+        <script type="text/javascript" src="js/ht/hicGoogleDocsParser.js"></script>
+        <script type="text/javascript" src="js/ht/underscore/underscore.js"></script>
+        <script type="text/javascript" src="js/ht/underscore/_plus.js"></script>
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/ht/spinner/spinners.min.js"></script>
+        <![endif]-->
 
-<div style="position:absolute; top:115px; left:100px; width:115px; height:75px" onclick="tentaLogin()"></div>
-<script>
-    //if (localStorage.getItem('password') == "") {
-    sessionStorage.setItem("login_superata", true);
-    location.href = "home.html";
-    //}
-</script>
-<div id="c_id" style="position:absolute; top:252px; left:85px; color:#6b6868">customer id:
+        <script type="text/javascript" src="js/ht/spinner/spinners.min.js"></script>
+        <link rel="stylesheet" href="css/hicTechStyle.css" />
+
+
+
+
+
+
+        <!-- HICTECH -->
+
+
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicomatic/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicomatic/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/favicomatic/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/favicomatic/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="images/favicomatic/mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="images/favicomatic/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="images/favicomatic/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="images/favicomatic/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="images/favicomatic/mstile-310x310.png" />
+
+
+
+    </head>
+	<body class="homepage">
     <script>
-        document.write(localStorage.getItem('customer_id'))
-    </script>
-</div>
-<div style="position:absolute; top:435px; left:190px; color:#6b6868; width:100px; height:20px; padding:20px 0px 0px 20px">
-    <script>
-        document.write('<a href="mailto:info@hictech.com?subject=iDocs1.2 request new psw customer-id:' + localStorage.getItem('customer_id') + '" target="_blank">' + RECUPERA_PASSWORD + '</a>')
-    </script>
-</div>
+        $(document).ready(function(){
+            hicGoogleDocsParser({
+                "url":"https://docs.google.com/spreadsheet/pub?key=1JZFHIdEAyb4MhEeuMJN0J8t4vjm_OtNgLN1_GQqDQ0Y&output=html",
+                "callback":"jsonready",
+                "loadingTarget":"#result_json",
+                "target" : "#result_json"
+            });
+        });
 
-<div style="position:absolute; top:435px; left:2px; color:#6b6868; width:100px; height:20px; padding:20px 0px 0px 20px">
-    <a href="credits.html">Credits</a>
-</div>
-</body>
+        function jsonready(result,opts){
 
-<script>
-    function tentaLogin() {
 
-        var psw = document.getElementById("psw").value;
 
-        if (verificaPassword(psw)) {
-            sessionStorage.setItem('login_superata', true);
-            location.href = "home.html";
+            $("body").find(".i18n").each(function(){
+                var key = $(this).attr("data-loc-key");
+                if(_.is(key)){
+                    var localized_string = getLocalizedString(result,key);
+                    $(this).html(localized_string);
+                }
+            })
+
+        }
+
+        function getLocalizedString(result,key){
+            var ret;
+
+            var language = window.navigator.userLanguage || window.navigator.language;
+
+            var lan = (language.indexOf("it") != -1)? "it" : "en";
+
+
+            _.each(result["trs"],function(tr){
+                if ( tr["key"] == key){
+                    ret = tr[lan];
+                }
+            });
+
+            return ret;
+
         }
 
 
-    }
-</script>
 
+    </script>
+		<!-- Header -->
+			<div id="header-wrapper">
+				<div id="header">
+
+                    <div class="logo_picDocs"></div>
+					
+					<!-- Logo -->
+                    <!--
+						<h1><a href="index.html">picDocs</a></h1>
+                        <a href="index.html">docsaholics solution</a>
+					-->
+					<!-- Nav -->
+                    <!--
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="index.html">Home</a></li>
+								<li>
+									<a href="">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+												<li><a href="#">Veroeros feugiat</a></li>
+												<li><a href="#">Nisl sed aliquam</a></li>
+												<li><a href="#">Dolore adipiscing</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
+								<li><a href="no-sidebar.html">No Sidebar</a></li>
+							</ul>
+						</nav>
+                        -->
+					<!-- Banner -->
+						<section id="banner">
+							<header>
+								<h2 class="i18n" data-loc-key="slogan" >Docs-aholics solution</h2>
+								<p class="i18n" data-loc-key="sottoslogan">your personal documents everywhere on your devices</p>
+							</header>
+						</section>
+
+					<!-- Intro -->
+						<section id="intro" class="container">
+							<div class="row">
+                                <div class="4u">
+                                    <section class="first">
+                                        <i class="icon featured alt2 fa-mobile"></i>
+                                        <header>
+                                            <h2 class="i18n" data-loc-key="on_your_device_title" >On your devices</h2>
+                                        </header>
+                                        <p class="i18n" data-loc-key="on_your_device_text" >Cause you always have it with you and you can't forget it for more than 10 minutes.</p>
+                                    </section>
+                                </div>
+								<div class="4u">
+									<section class="middle">
+										<i class="icon featured fa-camera pinkBG"></i>
+										<header>
+											<h2 class="i18n" data-loc-key="pictures_title" >pictures = documents</h2>
+										</header>
+										<p class="i18n" data-loc-key="pictures_text" >Cause taking a picture is the fastest way to save a document.</p>
+									</section>
+								</div>
+								<div class="4u">
+									<section class="last">
+										<i class="icon featured alt fa-dropbox"></i>
+										<header>
+											<h2 class="i18n" data-loc-key="we_love_dropbox_title" >We love Dropbox</h2>
+										</header>
+										<p class="i18n" data-loc-key="we_love_dropbox_text" >Your documents are yours, we don't want them! PicDocs Uses your Dropbox folder to share them on YOUR devices</p>
+									</section>
+								</div>
+
+							</div>
+                            <!--
+							<footer>
+								<ul class="actions">
+									<li><a href="#" class="button big">Get Started</a></li>
+									<li><a href="#" class="button alt big">Learn More</a></li>
+								</ul>
+							</footer>
+							-->
+						</section>
+		
+				</div>
+			</div>
+
+		<!-- Main -->
+			<div id="main-wrapper">
+				<div class="container">
+
+                    <div class="row">
+                        <div class="12u">
+
+                            <!-- Portfolio -->
+                            <section>
+                                <header class="major">
+                                    <h2>Come funziona</h2>
+                                </header>
+
+                                <div class="row">
+                                    <p>picDocs nasce nel 2010 con iDocs un'applicazione tanto semplice quanto geniale basata sul semplice concetto che la maniera più facile e veloce per salvare un documento cartaceo è scattargli una foto.
+                                        Partendo dall'esperienza di iDocs il nostro tema ha sviluppato picDocs.</p>
+                                </div>
+
+                            </section>
+
+                        </div>
+                    </div>
+
+
+					<div class="row">
+						<div class="12u">
+							
+							<!-- Portfolio -->
+								<section>
+									<header class="major">
+										<h2>Features</h2>
+									</header>
+
+									<div class="row">
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="images/gradient1.png" alt="" /></a>
+												<header>
+													<h3>Completamente Gratuito</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+											</section>
+										</div>
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="images/gradient2.png" alt="" /></a>
+												<header>
+													<h3>Completamente Tuo</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+											</section>
+										</div>
+										<div class="4u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="images/gradient3.png" alt="" /></a>
+												<header>
+													<h3>Completatamente Sicuro</h3>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+											</section>
+										</div>
+
+									</div>
+
+                                    <div class="row">
+                                        <div class="4u">
+                                            <section class="box">
+                                                <a href="#" class="image featured"><img src="images/gradient4.png" alt="" /></a>
+                                                <header>
+                                                    <h3>Non ti spiamo</h3>
+                                                </header>
+                                                <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                            </section>
+                                        </div>
+                                        <div class="4u">
+                                            <section class="box">
+                                                <a href="#" class="image featured"><img src="images/gradient5.png" alt="" /></a>
+                                                <header>
+                                                    <h3>Ovunque vuoi</h3>
+                                                </header>
+                                                <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                            </section>
+                                        </div>
+                                        <div class="4u">
+                                            <section class="box">
+                                                <a href="#" class="image featured"><img src="images/gradient6.png" alt="" /></a>
+                                                <header>
+                                                    <h3>Completatamente Sicuro</h3>
+                                                </header>
+                                                <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                            </section>
+                                        </div>
+                                    </div>
+
+								</section>
+
+						</div>
+					</div>
+                    <!--
+					<div class="row">
+						<div class="12u">
+
+
+								<section>
+									<header class="major">
+										<h2>The Blog</h2>
+									</header>
+									<div class="row">
+										<div class="6u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+												<header>
+													<h3>Magna tempus consequat lorem</h3>
+													<p>Posted 45 minutes ago</p>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit  adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
+												<footer>
+													<ul class="actions">
+														<li><a href="#" class="button icon fa-file-text">Continue Reading</a></li>
+														<li><a href="#" class="button alt icon fa-comment">33 comments</a></li>
+													</ul>
+												</footer>
+											</section>
+										</div>
+										<div class="6u">
+											<section class="box">
+												<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+												<header>
+													<h3>Aptent veroeros et aliquam</h3>
+													<p>Posted 45 minutes ago</p>
+												</header>
+												<p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit  adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
+												<footer>
+													<ul class="actions">
+														<li><a href="#" class="button icon fa-file-text">Continue Reading</a></li>
+														<li><a href="#" class="button alt icon fa-comment">33 comments</a></li>
+													</ul>
+												</footer>
+											</section>
+										</div>
+									</div>
+								</section>
+							
+						</div>
+					</div>
+                    -->
+				</div>
+			</div>
+
+		<!-- Footer -->
+			<div id="footer-wrapper">
+				<section id="footer" class="container">
+                    <!--
+					<div class="row">
+						<div class="8u">
+							<section>
+								<header>
+									<h2>Blandit nisl adipiscing</h2>
+								</header>
+								<ul class="dates">
+									<li>
+										<span class="date">Jan <strong>27</strong></span>
+										<h3><a href="#">Lorem dolor sit amet veroeros</a></h3>
+										<p>Ipsum dolor sit amet veroeros consequat blandit ipsum phasellus lorem consequat etiam.</p>
+									</li>
+									<li>
+										<span class="date">Jan <strong>23</strong></span>
+										<h3><a href="#">Ipsum sed blandit nisl consequat</a></h3>
+										<p>Blandit phasellus lorem ipsum dolor tempor sapien tortor hendrerit adipiscing feugiat lorem.</p>
+									</li>
+									<li>
+										<span class="date">Jan <strong>15</strong></span>
+										<h3><a href="#">Magna tempus lorem feugiat</a></h3>
+										<p>Dolore consequat sed phasellus lorem sed etiam nullam dolor etiam sed amet sit consequat.</p>
+									</li>
+									<li>
+										<span class="date">Jan <strong>12</strong></span>
+										<h3><a href="#">Dolore tempus ipsum feugiat nulla</a></h3>
+										<p>Feugiat lorem dolor sed nullam tempus lorem ipsum dolor sit amet nullam consequat.</p>
+									</li>
+									<li>
+										<span class="date">Jan <strong>10</strong></span>
+										<h3><a href="#">Blandit tempus aliquam?</a></h3>
+										<p>Feugiat sed tempus blandit tempus adipiscing nisl lorem ipsum dolor sit amet dolore.</p>
+									</li>
+								</ul>
+							</section>
+						</div>
+						<div class="4u">
+							<section>
+								<header>
+									<h2>What's this all about?</h2>
+								</header>
+								<a href="#" class="image featured"><img src="images/pic10.jpg" alt="" /></a>
+								<p>
+									This is <strong>Dopetrope</strong> a free, fully responsive HTML5 site template by 
+									<a href="http://n33.co">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a> It's released for free under
+									the <a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for any personal or commercial project &ndash; just don't forget to credit us!
+								</p>
+								<footer>
+									<a href="#" class="button">Find out more</a>
+								</footer>
+							</section>
+						</div>
+					</div>
+                    -->
+					<div class="row">
+
+						<div class="4u">
+							<section>
+								<header>
+									<h2>picDocs.com</h2>
+								</header>
+								<ul class="social">
+									<!-- <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li> -->
+									<li><a class="icon fa-twitter" href="https://twitter.com/picDocuments" target="_blank"><span class="label">Twitter</span></a></li>
+									<!-- <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li> -->
+									<!--<li><a class="icon fa-linkedin" href="" target="_blank"><span class="label">LinkedIn</span></a></li>-->
+								</ul>
+								<ul class="contact">
+									<li>
+										<h3>Address</h3>
+										<p>
+											hicTech srl<br />
+											Corso Mazzini 28 <br />
+                                            87100 - Cosenza <br />
+											ITALY
+										</p>
+									</li>
+									<li>
+										<h3>Mail</h3>
+										<p><a href="#">info@picDocs.com</a></p>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+						
+							<!-- Copyright -->
+								<div id="copyright">
+									<ul class="links">
+										<li>&copy; hicTech. All rights reserved.</li><li>Design: <a href="http://hictech.com">hictech</a></li>
+									</ul>
+								</div>
+
+						</div>
+					</div>
+				</section>
+			</div>
+
+	</body>
 </html>
