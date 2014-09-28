@@ -1,0 +1,271 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    -ms-touch-action: none;
+}
+
+.body,body {
+    background-color: #313942;
+    font-family: source_sans_proregular;
+    font-size: 11px;
+    overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+
+
+/* SCROLLER */
+
+
+
+#mainWrapper {
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #34393e;
+    overflow: hidden;
+
+    /* queste due se non viene lanciato iScroll usano lo scroll nativo di iOS */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+#mainScroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+
+}
+
+
+#general_container{
+    padding-top:70px;
+
+
+}
+
+
+#zoomAreaWrapper {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #34393e;
+    overflow: hidden;
+}
+
+#zoomAreaScroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+
+
+
+/* IL RESTO*/
+
+a {
+    text-decoration: none;
+    color: #444
+}
+
+#confirm_box {
+    display: none
+}
+
+#confirm {
+    background-image: url(../imm/sfondo_confirm.png);
+    width: 220px;
+    height: 147px;
+    padding: 70px 50px 0px 50px;
+    text-align: center;
+    font-size: 13px;
+    position: absolute;
+    z-index: 33000;
+    top: 120px;
+    left: -3px;
+    color: #000
+}
+
+/*
+#filtro {
+    background-color: #000;
+    width: 100%;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    height: 100%;
+    position: absolute;
+    z-index: 30000
+}
+
+.filtro_free_version {
+    background-color: #000;
+    width: 100%;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    height: 100%;
+    position: absolute;
+    top: 45px;
+    z-index: 30000
+}
+*/
+
+.intro {
+    background-image: url(imm/intro.png);
+    width: 320px;
+    height: 480px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 55555
+}
+
+
+
+
+.new_button {
+    background-image: url(../imm/new_doc_button.png);
+    width: 102px;
+    height: 31px;
+    padding: 18px 0px 0px 25px;
+    position: absolute;
+    top: 20px;
+    text-shadow: #b2afaf 1px 1px;
+    text-align: center
+}
+
+.edit_button {
+    background-image: url(../imm/edit_button.png);
+    width: 127px;
+    height: 31px;
+    padding: 18px 0px 0px 0px;
+    position: absolute;
+    top: 20px;
+    left: 193px;
+    text-shadow: #b2afaf 1px 1px;
+    text-align: center
+}
+
+.done_button {
+    background-image: url(../imm/done_button.png);
+    width: 127px;
+    height: 31px;
+    padding: 18px 0px 0px 0px;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    display: none;
+    text-shadow: #b2afaf 1px 1px;
+    text-align: center
+}
+
+.options_button {
+    background-image: url(../imm/options.png);
+    width: 48px;
+    height: 27px;
+    padding: 12px 0px 0px 21px;
+    position: absolute;
+    top: 26px;
+    left: 125px
+}
+
+.button_ok {
+    background-image: url(../imm/ok.png);
+    width: 103px;
+    height: 68px;
+}
+
+.doc {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 110px;
+    position: relative;
+    margin-bottom: 2px;
+    overflow: hidden;
+
+}
+
+
+
+.doc:last-child {
+    margin-bottom: 65px;
+}
+
+
+
+
+
+
+
+
+
+.pic_zoom {
+    width: 320px;
+    height: 400px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 33333
+}
+
+div.button_bar {
+    display: block;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 412px;
+    width: 100%;
+    height: 50px;
+    min-height: 0px !important;
+}
+
+div.button_bar > img {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+} 

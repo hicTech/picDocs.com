@@ -1,0 +1,36 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	<meta name = "viewport"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>iDocs - backdoor</title>
+
+
+
+	<script>
+		
+		var backDoorPrefis="a3rwewe";
+		var backDoorFactor=3333;
+		
+		function calcola(){
+			var id=document.getElementById("input").value;
+			document.getElementById("nuova_psw").innerHTML=backDoorPrefis+parseInt(parseInt(id)/backDoorFactor);
+
+		}
+	</script>
+</head> 
+
+<body >
+	<div>customer id</div>
+	<div><input id="input"/></div>
+	<div><input onclick="calcola()" type="button" value="calcola"></input></div>
+	
+	<div><br><br><br><br>nuova password</div>
+	<div id="nuova_psw"></div>
+
+</body> 
+</html> 
