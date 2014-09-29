@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>picDocs</title>
+		<title>picDocs.com</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -16,8 +16,6 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
-
-
 
 
         <!-- HICTECH -->
@@ -31,10 +29,6 @@
 
         <script type="text/javascript" src="js/ht/spinner/spinners.min.js"></script>
         <link rel="stylesheet" href="css/hicTechStyle.css" />
-
-
-
-
 
 
         <!-- HICTECH -->
@@ -93,7 +87,7 @@
                 var key = $(this).attr("data-loc-key");
                 if(_.is(key)){
                     var localized_string = getLocalizedString(result,key);
-                    $(this).html(localized_string);
+                    $(this).html("").html(localized_string);
                 }
             })
 
@@ -104,7 +98,7 @@
 
             var language = window.navigator.userLanguage || window.navigator.language;
 
-            var lan = (language.indexOf("it") != -1)? "it" : "en";
+            var lan = "en"; //(language.indexOf("it") != -1)? "it" : "en";
 
 
             _.each(result["trs"],function(tr){
@@ -164,9 +158,10 @@
 					<!-- Banner -->
 						<section id="banner">
 							<header>
-								<h2 class="i18n" data-loc-key="slogan" >Docs-aholics solution</h2>
-								<p class="i18n" data-loc-key="sottoslogan">your personal documents everywhere on your devices</p>
+								<h2 class="i18n" data-loc-key="slogan" >soluzione per i documento-dipendenti</h2>
+								<p class="i18n" data-loc-key="sottoslogan" style="font-style: italic; width: 70%; margin: 0px auto" >...la maniera più semplice e veloce per memorizzare ed avere sempre con se un documento cartaceo è scattargli una foto...</p>
 							</header>
+
 						</section>
 
 					<!-- Intro -->
@@ -176,27 +171,27 @@
                                     <section class="first">
                                         <i class="icon featured alt2 fa-mobile"></i>
                                         <header>
-                                            <h2 class="i18n" data-loc-key="on_your_device_title" >On your devices</h2>
+                                            <h2 class="i18n" data-loc-key="on_your_device_title" >Sul tuo telefono</h2>
                                         </header>
-                                        <p class="i18n" data-loc-key="on_your_device_text" >Cause you always have it with you and you can't forget it for more than 10 minutes.</p>
+                                        <p class="i18n" data-loc-key="on_your_device_text" >Visto che lo hai sempre dietro e ti manca l'aria se lo dimentichi.</p>
                                     </section>
                                 </div>
 								<div class="4u">
 									<section class="middle">
 										<i class="icon featured fa-camera pinkBG"></i>
 										<header>
-											<h2 class="i18n" data-loc-key="pictures_title" >pictures = documents</h2>
+											<h2 class="i18n" data-loc-key="pictures_title" >foto = documenti</h2>
 										</header>
-										<p class="i18n" data-loc-key="pictures_text" >Cause taking a picture is the fastest way to save a document.</p>
+										<p class="i18n" data-loc-key="pictures_text" >Visto che scattargli una foto è la maniera più veloce per salvare un documento..</p>
 									</section>
 								</div>
 								<div class="4u">
 									<section class="last">
 										<i class="icon featured alt fa-dropbox"></i>
 										<header>
-											<h2 class="i18n" data-loc-key="we_love_dropbox_title" >We love Dropbox</h2>
+											<h2 class="i18n" data-loc-key="we_love_dropbox_title" >Ci piace Dropbox</h2>
 										</header>
-										<p class="i18n" data-loc-key="we_love_dropbox_text" >Your documents are yours, we don't want them! PicDocs Uses your Dropbox folder to share them on YOUR devices</p>
+										<p class="i18n" data-loc-key="we_love_dropbox_text" >I tuoi documenti sono tuoi, a noi non interessano! PicDocs salva i tuoi documenti sulla TUA cartella Dropbox.</p>
 									</section>
 								</div>
 
@@ -218,24 +213,47 @@
 			<div id="main-wrapper">
 				<div class="container">
 
-                    <div class="row">
-                        <div class="12u">
 
                             <!-- Portfolio -->
                             <section>
-                                <header class="major">
-                                    <h2>Come funziona</h2>
-                                </header>
+
 
                                 <div class="row">
-                                    <p>picDocs nasce nel 2010 con iDocs un'applicazione tanto semplice quanto geniale basata sul semplice concetto che la maniera più facile e veloce per salvare un documento cartaceo è scattargli una foto.
-                                        Partendo dall'esperienza di iDocs il nostro tema ha sviluppato picDocs.</p>
+                                    <div class="8u">
+                                        <section class="first">
+                                            <header class="major">
+                                                <h2 class="i18n" data-loc-key="how_it_works">Come funziona</h2>
+                                            </header>
+                                            <p class="i18n" data-loc-key="how_it_works_text">
+                                                picDocs nasce nel 2010 con iDocs un'app basata sul concetto, tanto semplice quanto rivoluzionario che la maniera più semplice e veloce per memorizzare ed avere sempre con se un documento cartaceo è scattargli una foto.<br>
+                                                Quante volte ti è stato chiesto di inviare copia della carta di identità? quante volte ti hanno chiesto la tessera sanitaria in farmacia, il numero di targa dei tuoi veicoli, il codice fiscale.<br>
+                                                Con picDocs conservi tutti i tuoi documenti - in sicurezza - nel tuo dispositivo (se vuoi anche sulla tua cartella Dropbox) pronti per essere consultati, inviati e stampati.<br>
+                                            </p>
+
+                                            <header class="major">
+                                                <h2 class="i18n" data-loc-key="why_free">Perche gratis?</h2>
+                                            </header>
+                                            <p class="i18n" data-loc-key="why_free_text">
+                                                PicDocs è e resterà completamente gratis e privo di pubblicità. È stato sviluppato utilizzando teconologie open source per abbattere i costi. PicDocs è installato sul tuo dispositivo e non utilizza alcun server. Di fatto non abbiamo costi di mantenimento server perché non esistono server. Speriamo che il successo di picDocs possa un giorno ripagarci degli sforzi fatti.
+                                            </p>
+                                        </section>
+                                    </div>
+                                    <div class="4u">
+                                        <section class="middle">
+                                            <header class="major">
+                                                <h2 class="i18n" data-loc-key="some_hints">Qualche Consiglio</h2>
+                                            </header>
+                                            <p class="i18n" data-loc-key="some_hints_text">
+
+                                            </p>
+                                        </section>
+                                    </div>
+
+
                                 </div>
 
                             </section>
 
-                        </div>
-                    </div>
 
 
 					<div class="row">
@@ -252,27 +270,31 @@
 											<section class="box">
 												<a href="#" class="image featured"><img src="images/gradient1.png" alt="" /></a>
 												<header>
-													<h3>Completamente Gratuito</h3>
+													<h3 class="i18n" data-loc-key="totally_free">Completamente Gratuito</h3>
 												</header>
-												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<p class="i18n" data-loc-key="totally_free_text">
+                                                    PicDocs è stato sviluppato con il principio della sostenibilità. PicDocs non utilizza che il tuo dispositivo (telefono/tablet), non comunica con
+                                                    server, non utilizza servizi di terze parti e non necessita della connessione internet. PicDocs sfrutta solo il tuo dispositivo (la tua batteria)
+                                                    rendendo PicDocs autosufficiente e gratuito... per noi e per te.
+                                                </p>
 											</section>
 										</div>
 										<div class="4u">
 											<section class="box">
 												<a href="#" class="image featured"><img src="images/gradient2.png" alt="" /></a>
 												<header>
-													<h3>Completamente Tuo</h3>
+													<h3 class="i18n" data-loc-key="completely_yours">Completamente Tuo</h3>
 												</header>
-												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<p class="i18n" data-loc-key="completely_yours_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
 											</section>
 										</div>
 										<div class="4u">
 											<section class="box">
 												<a href="#" class="image featured"><img src="images/gradient3.png" alt="" /></a>
 												<header>
-													<h3>Completatamente Sicuro</h3>
+													<h3 class="i18n" data-loc-key="completely_safe">Completatamente Sicuro</h3>
 												</header>
-												<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<p class="i18n" data-loc-key="completely_safe_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
 											</section>
 										</div>
 
@@ -283,18 +305,23 @@
                                             <section class="box">
                                                 <a href="#" class="image featured"><img src="images/gradient4.png" alt="" /></a>
                                                 <header>
-                                                    <h3>Non ti spiamo</h3>
+                                                    <h3 class="i18n" data-loc-key="where_are">Non ti spiamo</h3>
                                                 </header>
-                                                <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                                <p class="i18n" data-loc-key="where_are_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
                                             </section>
                                         </div>
                                         <div class="4u">
                                             <section class="box">
                                                 <a href="#" class="image featured"><img src="images/gradient5.png" alt="" /></a>
                                                 <header>
-                                                    <h3>Ovunque vuoi</h3>
+                                                    <h3 class="i18n" data-loc-key="dropbox">Ovunque vuoi</h3>
                                                 </header>
-                                                <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                                <p class="i18n" data-loc-key="dropbox_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                                <footer>
+                                                    <ul class="actions">
+                                                        <li><a href="#" class="button alt big">Learn More</a></li>
+                                                    </ul>
+                                                </footer>
                                             </section>
                                         </div>
                                         <div class="4u">
