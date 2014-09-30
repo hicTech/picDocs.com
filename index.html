@@ -29,6 +29,7 @@
 
         <script type="text/javascript" src="js/ht/spinner/spinners.min.js"></script>
         <link rel="stylesheet" href="css/hicTechStyle.css" />
+        <script type="text/javascript" src="js/ht/localization.js"></script>
 
 
         <!-- HICTECH -->
@@ -69,51 +70,7 @@
 
     </head>
 	<body class="homepage">
-    <script>
-        $(document).ready(function(){
-            hicGoogleDocsParser({
-                "url":"https://docs.google.com/spreadsheet/pub?key=1JZFHIdEAyb4MhEeuMJN0J8t4vjm_OtNgLN1_GQqDQ0Y&output=html",
-                "callback":"jsonready",
-                "loadingTarget":"#result_json",
-                "target" : "#result_json"
-            });
-        });
 
-        function jsonready(result,opts){
-
-
-
-            $("body").find(".i18n").each(function(){
-                var key = $(this).attr("data-loc-key");
-                if(_.is(key)){
-                    var localized_string = getLocalizedString(result,key);
-                    $(this).html("").html(localized_string);
-                }
-            })
-
-        }
-
-        function getLocalizedString(result,key){
-            var ret;
-
-            var language = window.navigator.userLanguage || window.navigator.language;
-
-            var lan = "en"; //(language.indexOf("it") != -1)? "it" : "en";
-
-
-            _.each(result["trs"],function(tr){
-                if ( tr["key"] == key){
-                    ret = tr[lan];
-                }
-            });
-
-            return ret;
-
-        }
-
-
-
-    </script>
 		<!-- Header -->
 			<div id="header-wrapper">
 				<div id="header">
@@ -180,9 +137,9 @@
 									<section class="middle">
 										<i class="icon featured fa-camera pinkBG"></i>
 										<header>
-											<h2 class="i18n" data-loc-key="pictures_title" >foto = documenti</h2>
+											<h2 class="i18n" data-loc-key="pictures_title" >Foto = Documenti</h2>
 										</header>
-										<p class="i18n" data-loc-key="pictures_text" >Visto che scattargli una foto è la maniera più veloce per salvare un documento..</p>
+										<p class="i18n" data-loc-key="pictures_text" >Visto che scattargli una foto è la maniera più veloce per salvare un documento.</p>
 									</section>
 								</div>
 								<div class="4u">
@@ -283,18 +240,25 @@
 											<section class="box">
 												<a href="#" class="image featured"><img src="images/gradient2.png" alt="" /></a>
 												<header>
-													<h3 class="i18n" data-loc-key="completely_yours">Completamente Tuo</h3>
+													<h3 class="i18n" data-loc-key="completely_yours">Completamente TUO</h3>
 												</header>
-												<p class="i18n" data-loc-key="completely_yours_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<p class="i18n" data-loc-key="completely_yours_text">
+                                                    PicDocs crea un ambiente "stagno" nel quale conservare i tuoi documenti affinchè questi rimangano tuoi e solo tuoi. <br>Quando
+                                                    inserisci un nuovo documento su picDocs questo viene salvato sul tuo dispositivo. Non c'è comunicazione fra picDocs e il resto del mondo
+                                                    neanche quanto inserisci la password.
+												</p>
 											</section>
 										</div>
 										<div class="4u">
 											<section class="box">
 												<a href="#" class="image featured"><img src="images/gradient3.png" alt="" /></a>
 												<header>
-													<h3 class="i18n" data-loc-key="completely_safe">Completatamente Sicuro</h3>
+													<h3 class="i18n" data-loc-key="completely_safe">Completatamente SICURO</h3>
 												</header>
-												<p class="i18n" data-loc-key="completely_safe_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+												<p class="i18n" data-loc-key="completely_safe_text">
+                                                    Non comunicando con l'esterno picDocs acresce la sua sicurezza. Non abbiamo modo di sapere quali e quanti documenti salvi in picDocs.
+                                                    Non possiamo (ne vogliamo) salvare i tuoi dati personali.
+                                                </p>
 											</section>
 										</div>
 
@@ -305,21 +269,27 @@
                                             <section class="box">
                                                 <a href="#" class="image featured"><img src="images/gradient4.png" alt="" /></a>
                                                 <header>
-                                                    <h3 class="i18n" data-loc-key="where_are">Non ti spiamo</h3>
+                                                    <h3 class="i18n" data-loc-key="where_are">Dove diavolo l'ho messo?</h3>
                                                 </header>
-                                                <p class="i18n" data-loc-key="where_are_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                                <p class="i18n" data-loc-key="where_are_text">
+                                                    In aggiunta puoi memorizzare la posizione della versione cartacea del documento che stai salvando in picDocs. In questo modo, quando una
+                                                    foto del documento non basta, puoi chiedere a picDocs di ricordarti dove hai conservato l'originale.
+                                                </p>
                                             </section>
                                         </div>
                                         <div class="4u">
                                             <section class="box">
                                                 <a href="#" class="image featured"><img src="images/gradient5.png" alt="" /></a>
                                                 <header>
-                                                    <h3 class="i18n" data-loc-key="dropbox">Ovunque vuoi</h3>
+                                                    <h3 class="i18n" data-loc-key="dropbox">Il TUO Dropbox</h3>
                                                 </header>
-                                                <p class="i18n" data-loc-key="dropbox_text">Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                                <p class="i18n" data-loc-key="dropbox_text">
+                                                    PicDocs può (se vuoi) essere collegato con la TUA cartella Dropbox. In questo modo se vuoi fare un backup dei tuoi documenti o se vuoi
+                                                    condividerli sui tuoi dispositivi puoi sincronizzarli, in completa sicurezza col TUO Dropbox.
+                                                </p>
                                                 <footer>
-                                                    <ul class="actions">
-                                                        <li><a href="#" class="button alt big">Learn More</a></li>
+                                                    <ul class="actions i18n" data-loc-key="learnmore">
+                                                        <li><a href="#" class="button alt big">Approfondisci</a></li>
                                                     </ul>
                                                 </footer>
                                             </section>
@@ -328,9 +298,12 @@
                                             <section class="box">
                                                 <a href="#" class="image featured"><img src="images/gradient6.png" alt="" /></a>
                                                 <header>
-                                                    <h3>Completatamente Sicuro</h3>
+                                                    <h3 class="i18n" data-loc-key="multiplatform">Multipiattaforma</h3>
                                                 </header>
-                                                <p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+                                                <p class="i18n" data-loc-key="multiplatform_text">
+                                                    Per ora puoi usare picDocs sono su dispositivi Apple. Contiamo di rilasciare la versione Android per il prossimo Natale e per la
+                                                    prossima primavera potrai utilizzare picDocs anche da computer.
+                                                </p>
                                             </section>
                                         </div>
                                     </div>
@@ -446,7 +419,7 @@
 							</section>
 						</div>
 					</div>
-                    -->
+
 					<div class="row">
 
 						<div class="4u">
@@ -455,10 +428,10 @@
 									<h2>picDocs.com</h2>
 								</header>
 								<ul class="social">
-									<!-- <li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li> -->
+									<li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
 									<li><a class="icon fa-twitter" href="https://twitter.com/picDocuments" target="_blank"><span class="label">Twitter</span></a></li>
-									<!-- <li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li> -->
-									<!--<li><a class="icon fa-linkedin" href="" target="_blank"><span class="label">LinkedIn</span></a></li>-->
+									<li><a class="icon fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
+									<li><a class="icon fa-linkedin" href="" target="_blank"><span class="label">LinkedIn</span></a></li>
 								</ul>
 								<ul class="contact">
 									<li>
@@ -478,18 +451,25 @@
 							</section>
 						</div>
 					</div>
-					<div class="row">
-						<div class="12u">
-						
-							<!-- Copyright -->
-								<div id="copyright">
-									<ul class="links">
-										<li>&copy; hicTech. All rights reserved.</li><li>Design: <a href="http://hictech.com">hictech</a></li>
-									</ul>
-								</div>
+    -->
+                    <!-- Footer -->
+                    <div id="footer-wrapper">
+                        <section id="footer" class="container">
 
-						</div>
-					</div>
+                            <div class="row">
+                                <div class="12u">
+
+                                    <!-- Copyright -->
+                                    <div id="copyright">
+                                        <ul class="links">
+                                            <li>&copy; 2014-2024 hicTech. All rights reserved.</li><li>Design: <a href="http://hictech.com">hictech</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
 				</section>
 			</div>
 
